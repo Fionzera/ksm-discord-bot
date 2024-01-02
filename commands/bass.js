@@ -1,3 +1,4 @@
+
 const { EmbedBuilder, PermissionsBitField } = require("discord.js");
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const Discord = require("discord.js")
@@ -5,13 +6,18 @@ const db = require("croxydb")
 const languagefile = require("../language.json")
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("ping")
-    .setDescription("🤖 | Veja seu ping!"),
+    .setName("bass")
+    .setDescription("🎵 | Bass boost"),
     run: async (client, interaction) => {
       await interaction.deferReply().catch(err => {})
-    const embed = new Discord.EmbedBuilder()
-    .setDescription(client.ws.ping + " ms")
-    .setColor("Aqua")
-    return interaction.followUp({embeds: [embed]})
+      const queue = client.distube.getQueue(interaction);
+      const language = db.fetch(`language_${interaction.user.id}`)
+if (!language) {
+         if (!queue) return interaction.followUp(`There is no song on the list yet.`)
+interaction.followUp({content: "The song has been boosted successfully."})
+queue.filters.add("bassboost")
+}
+
+
  }
 }

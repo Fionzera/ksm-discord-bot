@@ -5,13 +5,15 @@ const db = require("croxydb")
 const languagefile = require("../language.json")
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("ping")
-    .setDescription("🤖 | Veja seu ping!"),
+    .setName("leave")
+    .setDescription("🎵 | cabou! bota mais aí"),
     run: async (client, interaction) => {
       await interaction.deferReply().catch(err => {})
-    const embed = new Discord.EmbedBuilder()
-    .setDescription(client.ws.ping + " ms")
-    .setColor("Aqua")
-    return interaction.followUp({embeds: [embed]})
+      const queue = client.distube.getQueue(interaction);
+         if (!queue) return interaction.followUp(`Sem música`)
+         client.distube.voices.leave(interaction)
+         await interaction.followUp("O papo ta bom, mas eu vou de nanas").catch(err => {})
+         db.delete(`music_${interaction.guild.id}`)
+return;
  }
 }

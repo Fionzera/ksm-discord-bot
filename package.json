@@ -10,7 +10,15 @@
   "author": "Lucas de Lima",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^14.13.0",
-    "dotenv": "^16.3.1"
+    "@distube/soundcloud": "^1.3.3",
+    "@distube/spotify": "^1.5.1",
+    "@distube/yt-dlp": "^1.1.3",
+    "croxydb": "^0.0.22",
+    "discord-player": "^6.6.5",
+    "discord.js": "^14.12.1",
+    "distube": "^4.0.3",
+    "dotenv": "^16.3.1",
+    "moment": "^2.29.4",
+    "opusscript": "^0.0.8"
   }
 }
