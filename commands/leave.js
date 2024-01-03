@@ -6,7 +6,7 @@ const languagefile = require("../language.json")
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("leave")
-    .setDescription("🎵 | cabou! bota mais aí"),
+    .setDescription("🎵 | Calma aí paizão, deixa eu ficar aqui!"),
     run: async (client, interaction) => {
       await interaction.deferReply().catch(err => {})
       const queue = client.distube.getQueue(interaction);

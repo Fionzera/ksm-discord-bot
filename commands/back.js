@@ -8,7 +8,7 @@ module.exports = {
   data: new SlashCommandBuilder()
     .setName("back")
     .setDescription("🎵 | Volta música!")
-    .addStringOption(option => option.setName("numero").setDescription("Quantas músicas você quer voltar?").setRequired(true)),
+    .addStringOption(option => option.setName("numero").setDescription("Quantos segundos voltar?").setRequired(true)),
     run: async (client, interaction) => {
       await interaction.deferReply().catch(err => {})
       const queue = client.distube.getQueue(interaction);

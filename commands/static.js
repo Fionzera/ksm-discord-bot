@@ -20,7 +20,5 @@ const embed = new Discord.EmbedBuilder()
 .addFields({name: "Ping", value: `${client.ws.ping}`, inline: true})
 .setColor("Orange")
  return interaction.followUp({embeds: [embed]})
-
-
  }
 }

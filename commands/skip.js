@@ -18,6 +18,5 @@ if (!language) {
   client.distube.skip(interaction)
 return interaction.followUp("Que isso? pulo a música do cara")
 }
-
  }
 }

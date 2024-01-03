@@ -7,11 +7,11 @@ const languagefile = require("../language.json")
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("play")
-    .setDescription("🎵| Play Music!")
-    .addStringOption(option => option.setName("nome").setDescription("Nome da música").setRequired(true)),
+    .setDescription("🎵| Toca música!")
+    .addStringOption(option => option.setName("link").setDescription("Nome da música").setRequired(true)),
     run: async (client, interaction, track) => {
       await interaction.deferReply().catch(err => {})
-      const string = interaction.options.getString("nome")
+      const string = interaction.options.getString("link")
       let voiceChannel = interaction.member.voice.channel
       const language = db.fetch(`language_${interaction.user.id}`)
       if (!language) {

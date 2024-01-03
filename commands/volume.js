@@ -21,7 +21,7 @@ if (!language) {
      if (volume < 1) return interaction.followUp("Amigão, não pode ser número menor que 1.")
      if (volume > 100) return interaction.followUp("Paia, muito paia, eu quero um número entre 1 e 100.")
      client.distube.setVolume(interaction, volume);
-     interaction.followUp("Pronto padrin, o volume está no **"+volume+"**, ficou bom?")
+     interaction.followUp("Pronto padrin, o volume está no **"+volume+"**, tá me ouvindo?")
        }
       
  }
